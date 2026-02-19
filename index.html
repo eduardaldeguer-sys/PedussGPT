@@ -1833,27 +1833,6 @@
 +      </footer>
 +    </main>
    </div>
--</div>
--
--<script>
--  // --- Mini "PedusGPT" en JavaScript ---
--  const respuestas = {
--    "hola": ["Hola!", "Hey! ¿Qué tal?"],
--    "como estas": ["Estoy bien, gracias!", "Todo perfecto!"],
--    "adios": ["Adiós!", "Nos vemos pronto!"],
--    "quien eres": ["Soy PedusGPT 0.1, tu asistente!", "PedusGPT a tu servicio!"]
--  };
--
--  function limpiar(texto) {
--    return texto.toLowerCase().trim();
--  }
--
--  function generarRespuesta(mensaje) {
--    mensaje = limpiar(mensaje);
--    for (let clave in respuestas) {
--      if (mensaje.includes(clave)) {
--        const lista = respuestas[clave];
--        return lista[Math.floor(Math.random() * lista.length)];
 +
 +  <script>
 +    const respuestas = {
@@ -1882,36 +1861,6 @@
        }
 +      return "No entiendo eso todavía... Prueba con: hola, como estas, adios, quien eres.";
      }
--    return "No entiendo eso todavía...";
--  }
--
--  function agregarMensaje(texto, clase) {
--    const messages = document.getElementById("messages");
--    const div = document.createElement("div");
--    div.className = "message " + clase;
--    div.textContent = texto;
--    messages.appendChild(div);
--    messages.scrollTop = messages.scrollHeight;
--  }
--
--  function enviarMensaje() {
--    const input = document.getElementById("userInput");
--    const mensaje = input.value;
--    if (!mensaje) return;
--
--    agregarMensaje(mensaje, "user");
--    const respuesta = generarRespuesta(mensaje);
--    setTimeout(() => agregarMensaje(respuesta, "bot"), 300);
--    input.value = "";
--    input.focus();
--  }
--
--  // Enviar con Enter
--  document.getElementById("userInput").addEventListener("keypress", function(e){
--    if (e.key === "Enter") enviarMensaje();
--  });
--</script>
- 
 +    function crearBurbuja(texto, clase) {
 +      const wrap = document.createElement('div');
 +      wrap.className = `message-wrap ${clase === 'user' ? 'user-wrap' : 'bot-wrap'}`;
